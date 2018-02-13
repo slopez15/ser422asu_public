@@ -1,0 +1,24 @@
+goals: 
+MVC, DAO, 
+webApp multiple persistance layers (RDBMS & NoSQL--MongoDB), 
+understand horizontal duplication of (server, app, data)
+
+Func-Reqs
+3 roles - vary permissions/features
+login link - track user type
+login form
+landing page (View News) - features/user-dependent
+
+NON-func Reqs
+servlets only!, 
+conversationsal (cookiesVSserver), 
+check user each page, 
+mvc where View can be anything, 
+thread safety (multiple Users/machines simoPress), 
+portable solution (no absolute path, hard-coded vals),
+
+
+
+
+
+
