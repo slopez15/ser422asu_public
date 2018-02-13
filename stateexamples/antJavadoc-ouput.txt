@@ -1,0 +1,438 @@
+Buildfile: C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\build.xml
+
+init:
+
+javadoc:
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src contains source files in the default package, you must specify them as source files not packages.
+  [javadoc] Generating Javadoc
+  [javadoc] Javadoc execution
+  [javadoc] Loading source file C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session1.java...
+  [javadoc] Loading source file C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session2.java...
+  [javadoc] Loading source file C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session3.java...
+  [javadoc] Loading source file C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionExampleUtils.java...
+  [javadoc] Loading source file C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java...
+  [javadoc] Loading source file C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookie.java...
+  [javadoc] Loading source file C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookieClient.java...
+  [javadoc] Loading source file C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHidden.java...
+  [javadoc] Loading source file C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHiddenClient.java...
+  [javadoc] Loading source file C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewrite.java...
+  [javadoc] Loading source file C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewriteClient.java...
+  [javadoc] Loading source file C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerSession.java...
+  [javadoc] Loading source file C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SimpleSession.java...
+  [javadoc] Constructing Javadoc information...
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session1.java:5: error: cannot find symbol
+  [javadoc] public class Session1 extends HttpServlet {
+  [javadoc]                               ^
+  [javadoc]   symbol: class HttpServlet
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session1.java:7: error: cannot find symbol
+  [javadoc]     public void doGet (HttpServletRequest req, HttpServletResponse res)
+  [javadoc]                        ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class Session1
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session1.java:7: error: cannot find symbol
+  [javadoc]     public void doGet (HttpServletRequest req, HttpServletResponse res)
+  [javadoc]                                                ^
+  [javadoc]   symbol:   class HttpServletResponse
+  [javadoc]   location: class Session1
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session1.java:8: error: package javax.servlet does not exist
+  [javadoc]         throws javax.servlet.ServletException, IOException {
+  [javadoc]                             ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session1.java:2: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.*;
+  [javadoc] ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session2.java:5: error: cannot find symbol
+  [javadoc] public class Session2 extends HttpServlet {
+  [javadoc]                               ^
+  [javadoc]   symbol: class HttpServlet
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session2.java:7: error: cannot find symbol
+  [javadoc]     public void doGet (HttpServletRequest req, HttpServletResponse res)
+  [javadoc]                        ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class Session2
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session2.java:7: error: cannot find symbol
+  [javadoc]     public void doGet (HttpServletRequest req, HttpServletResponse res)
+  [javadoc]                                                ^
+  [javadoc]   symbol:   class HttpServletResponse
+  [javadoc]   location: class Session2
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session2.java:8: error: package javax.servlet does not exist
+  [javadoc]         throws javax.servlet.ServletException, java.io.IOException {
+  [javadoc]                             ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session2.java:2: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.*;
+  [javadoc] ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session3.java:5: error: cannot find symbol
+  [javadoc] public class Session3 extends HttpServlet {
+  [javadoc]                               ^
+  [javadoc]   symbol: class HttpServlet
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session3.java:7: error: cannot find symbol
+  [javadoc]     public void doGet (HttpServletRequest req, HttpServletResponse res)
+  [javadoc]                        ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class Session3
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session3.java:7: error: cannot find symbol
+  [javadoc]     public void doGet (HttpServletRequest req, HttpServletResponse res)
+  [javadoc]                                                ^
+  [javadoc]   symbol:   class HttpServletResponse
+  [javadoc]   location: class Session3
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session3.java:8: error: package javax.servlet does not exist
+  [javadoc]         throws javax.servlet.ServletException, java.io.IOException {
+  [javadoc]                             ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\Session3.java:2: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.*;
+  [javadoc] ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:5: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpSession;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:6: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpSessionEvent;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:7: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpSessionBindingEvent;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:8: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpSessionListener;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:9: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpSessionAttributeListener;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:10: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpSessionBindingListener;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:15: error: cannot find symbol
+  [javadoc] public class SessionListen implements HttpSessionListener, HttpSessionAttributeListener, HttpSessionBindingListener {
+  [javadoc]                                       ^
+  [javadoc]   symbol: class HttpSessionListener
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:15: error: cannot find symbol
+  [javadoc] public class SessionListen implements HttpSessionListener, HttpSessionAttributeListener, HttpSessionBindingListener {
+  [javadoc]                                                            ^
+  [javadoc]   symbol: class HttpSessionAttributeListener
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:15: error: cannot find symbol
+  [javadoc] public class SessionListen implements HttpSessionListener, HttpSessionAttributeListener, HttpSessionBindingListener {
+  [javadoc]                                                                                          ^
+  [javadoc]   symbol: class HttpSessionBindingListener
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:25: error: cannot find symbol
+  [javadoc]   public void sessionCreated(HttpSessionEvent se) {
+  [javadoc]                              ^
+  [javadoc]   symbol:   class HttpSessionEvent
+  [javadoc]   location: class SessionListen
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:41: error: cannot find symbol
+  [javadoc]   public void sessionDestroyed(HttpSessionEvent se) {
+  [javadoc]                                ^
+  [javadoc]   symbol:   class HttpSessionEvent
+  [javadoc]   location: class SessionListen
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:56: error: cannot find symbol
+  [javadoc]   public void attributeAdded(HttpSessionBindingEvent se) {
+  [javadoc]                              ^
+  [javadoc]   symbol:   class HttpSessionBindingEvent
+  [javadoc]   location: class SessionListen
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:70: error: cannot find symbol
+  [javadoc]   public void attributeRemoved(HttpSessionBindingEvent se) {
+  [javadoc]                                ^
+  [javadoc]   symbol:   class HttpSessionBindingEvent
+  [javadoc]   location: class SessionListen
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:86: error: cannot find symbol
+  [javadoc]   public void attributeReplaced(HttpSessionBindingEvent se) {
+  [javadoc]                                 ^
+  [javadoc]   symbol:   class HttpSessionBindingEvent
+  [javadoc]   location: class SessionListen
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:95: error: cannot find symbol
+  [javadoc]   public void valueBound(HttpSessionBindingEvent be) {
+  [javadoc]                          ^
+  [javadoc]   symbol:   class HttpSessionBindingEvent
+  [javadoc]   location: class SessionListen
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\SessionListen.java:110: error: cannot find symbol
+  [javadoc]   public void valueUnbound(HttpSessionBindingEvent be) {
+  [javadoc]                            ^
+  [javadoc]   symbol:   class HttpSessionBindingEvent
+  [javadoc]   location: class SessionListen
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookie.java:4: error: package javax.servlet does not exist
+  [javadoc] import javax.servlet.ServletException;
+  [javadoc]                     ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookie.java:5: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.Cookie;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookie.java:6: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServlet;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookie.java:7: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServletRequest;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookie.java:8: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServletResponse;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookie.java:15: error: cannot find symbol
+  [javadoc] public class ShoppingCartViewerCookie extends HttpServlet {
+  [javadoc]                                               ^
+  [javadoc]   symbol: class HttpServlet
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookie.java:17: error: cannot find symbol
+  [javadoc] 	private static String processCookie(HttpServletRequest req) {
+  [javadoc] 	                                    ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class ShoppingCartViewerCookie
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookie.java:29: error: cannot find symbol
+  [javadoc] 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc] 	                   ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class ShoppingCartViewerCookie
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookie.java:29: error: cannot find symbol
+  [javadoc] 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc] 	                                           ^
+  [javadoc]   symbol:   class HttpServletResponse
+  [javadoc]   location: class ShoppingCartViewerCookie
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookie.java:29: error: cannot find symbol
+  [javadoc] 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc] 	                                                                           ^
+  [javadoc]   symbol:   class ServletException
+  [javadoc]   location: class ShoppingCartViewerCookie
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookie.java:59: error: cannot find symbol
+  [javadoc]   public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                     ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class ShoppingCartViewerCookie
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookie.java:59: error: cannot find symbol
+  [javadoc]   public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                                             ^
+  [javadoc]   symbol:   class HttpServletResponse
+  [javadoc]   location: class ShoppingCartViewerCookie
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookie.java:59: error: cannot find symbol
+  [javadoc]   public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                                                                             ^
+  [javadoc]   symbol:   class ServletException
+  [javadoc]   location: class ShoppingCartViewerCookie
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookieClient.java:4: error: package javax.servlet does not exist
+  [javadoc] import javax.servlet.ServletException;
+  [javadoc]                     ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookieClient.java:5: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.Cookie;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookieClient.java:6: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServlet;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookieClient.java:7: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServletRequest;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookieClient.java:8: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServletResponse;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookieClient.java:15: error: cannot find symbol
+  [javadoc] public class ShoppingCartViewerCookieClient extends HttpServlet {
+  [javadoc]                                                     ^
+  [javadoc]   symbol: class HttpServlet
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookieClient.java:19: error: cannot find symbol
+  [javadoc]     private static Cookie processCookie(HttpServletRequest req, String cookie) {
+  [javadoc]                                         ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class ShoppingCartViewerCookieClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookieClient.java:19: error: cannot find symbol
+  [javadoc]     private static Cookie processCookie(HttpServletRequest req, String cookie) {
+  [javadoc]                    ^
+  [javadoc]   symbol:   class Cookie
+  [javadoc]   location: class ShoppingCartViewerCookieClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookieClient.java:31: error: cannot find symbol
+  [javadoc]     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                        ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class ShoppingCartViewerCookieClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookieClient.java:31: error: cannot find symbol
+  [javadoc]     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                                                ^
+  [javadoc]   symbol:   class HttpServletResponse
+  [javadoc]   location: class ShoppingCartViewerCookieClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookieClient.java:31: error: cannot find symbol
+  [javadoc]     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                                                                                ^
+  [javadoc]   symbol:   class ServletException
+  [javadoc]   location: class ShoppingCartViewerCookieClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookieClient.java:68: error: cannot find symbol
+  [javadoc]     public void doGet(HttpServletRequest req, HttpServletResponse res)
+  [javadoc]                       ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class ShoppingCartViewerCookieClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookieClient.java:68: error: cannot find symbol
+  [javadoc]     public void doGet(HttpServletRequest req, HttpServletResponse res)
+  [javadoc]                                               ^
+  [javadoc]   symbol:   class HttpServletResponse
+  [javadoc]   location: class ShoppingCartViewerCookieClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerCookieClient.java:69: error: cannot find symbol
+  [javadoc] 	throws ServletException, IOException {
+  [javadoc] 	       ^
+  [javadoc]   symbol:   class ServletException
+  [javadoc]   location: class ShoppingCartViewerCookieClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHidden.java:4: error: package javax.servlet does not exist
+  [javadoc] import javax.servlet.ServletException;
+  [javadoc]                     ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHidden.java:5: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServlet;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHidden.java:6: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServletRequest;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHidden.java:7: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServletResponse;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHidden.java:14: error: cannot find symbol
+  [javadoc] public class ShoppingCartViewerHidden extends HttpServlet {
+  [javadoc]                                               ^
+  [javadoc]   symbol: class HttpServlet
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHidden.java:16: error: cannot find symbol
+  [javadoc]     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                        ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class ShoppingCartViewerHidden
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHidden.java:16: error: cannot find symbol
+  [javadoc]     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                                                ^
+  [javadoc]   symbol:   class HttpServletResponse
+  [javadoc]   location: class ShoppingCartViewerHidden
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHidden.java:16: error: cannot find symbol
+  [javadoc]     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                                                                                ^
+  [javadoc]   symbol:   class ServletException
+  [javadoc]   location: class ShoppingCartViewerHidden
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHidden.java:42: error: cannot find symbol
+  [javadoc]     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                       ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class ShoppingCartViewerHidden
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHidden.java:42: error: cannot find symbol
+  [javadoc]     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                                               ^
+  [javadoc]   symbol:   class HttpServletResponse
+  [javadoc]   location: class ShoppingCartViewerHidden
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHidden.java:42: error: cannot find symbol
+  [javadoc]     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                                                                               ^
+  [javadoc]   symbol:   class ServletException
+  [javadoc]   location: class ShoppingCartViewerHidden
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHiddenClient.java:4: error: package javax.servlet does not exist
+  [javadoc] import javax.servlet.ServletException;
+  [javadoc]                     ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHiddenClient.java:5: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServlet;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHiddenClient.java:6: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServletRequest;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHiddenClient.java:7: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServletResponse;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHiddenClient.java:14: error: cannot find symbol
+  [javadoc] public class ShoppingCartViewerHiddenClient extends HttpServlet {
+  [javadoc]                                                     ^
+  [javadoc]   symbol: class HttpServlet
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHiddenClient.java:16: error: cannot find symbol
+  [javadoc]     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                        ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class ShoppingCartViewerHiddenClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHiddenClient.java:16: error: cannot find symbol
+  [javadoc]     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                                                ^
+  [javadoc]   symbol:   class HttpServletResponse
+  [javadoc]   location: class ShoppingCartViewerHiddenClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHiddenClient.java:16: error: cannot find symbol
+  [javadoc]     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                                                                                ^
+  [javadoc]   symbol:   class ServletException
+  [javadoc]   location: class ShoppingCartViewerHiddenClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHiddenClient.java:35: error: cannot find symbol
+  [javadoc]     public void doGet(HttpServletRequest req, HttpServletResponse res)
+  [javadoc]                       ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class ShoppingCartViewerHiddenClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHiddenClient.java:35: error: cannot find symbol
+  [javadoc]     public void doGet(HttpServletRequest req, HttpServletResponse res)
+  [javadoc]                                               ^
+  [javadoc]   symbol:   class HttpServletResponse
+  [javadoc]   location: class ShoppingCartViewerHiddenClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerHiddenClient.java:36: error: cannot find symbol
+  [javadoc] 	throws ServletException, IOException {
+  [javadoc] 	       ^
+  [javadoc]   symbol:   class ServletException
+  [javadoc]   location: class ShoppingCartViewerHiddenClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewrite.java:4: error: package javax.servlet does not exist
+  [javadoc] import javax.servlet.ServletException;
+  [javadoc]                     ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewrite.java:5: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServlet;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewrite.java:6: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServletRequest;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewrite.java:7: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServletResponse;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewrite.java:14: error: cannot find symbol
+  [javadoc] public class ShoppingCartViewerRewrite extends HttpServlet {
+  [javadoc]                                                ^
+  [javadoc]   symbol: class HttpServlet
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewrite.java:16: error: cannot find symbol
+  [javadoc] 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc] 	                   ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class ShoppingCartViewerRewrite
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewrite.java:16: error: cannot find symbol
+  [javadoc] 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc] 	                                           ^
+  [javadoc]   symbol:   class HttpServletResponse
+  [javadoc]   location: class ShoppingCartViewerRewrite
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewrite.java:16: error: cannot find symbol
+  [javadoc] 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc] 	                                                                           ^
+  [javadoc]   symbol:   class ServletException
+  [javadoc]   location: class ShoppingCartViewerRewrite
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewrite.java:42: error: cannot find symbol
+  [javadoc]   public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                     ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class ShoppingCartViewerRewrite
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewrite.java:42: error: cannot find symbol
+  [javadoc]   public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                                             ^
+  [javadoc]   symbol:   class HttpServletResponse
+  [javadoc]   location: class ShoppingCartViewerRewrite
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewrite.java:42: error: cannot find symbol
+  [javadoc]   public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                                                                             ^
+  [javadoc]   symbol:   class ServletException
+  [javadoc]   location: class ShoppingCartViewerRewrite
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewriteClient.java:4: error: package javax.servlet does not exist
+  [javadoc] import javax.servlet.ServletException;
+  [javadoc]                     ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewriteClient.java:5: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServlet;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewriteClient.java:6: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServletRequest;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewriteClient.java:7: error: package javax.servlet.http does not exist
+  [javadoc] import javax.servlet.http.HttpServletResponse;
+  [javadoc]                          ^
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewriteClient.java:14: error: cannot find symbol
+  [javadoc] public class ShoppingCartViewerRewriteClient extends HttpServlet {
+  [javadoc]                                                      ^
+  [javadoc]   symbol: class HttpServlet
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewriteClient.java:18: error: cannot find symbol
+  [javadoc]     private static String[] processQueryString(HttpServletRequest req, String param, String delim) {
+  [javadoc]                                                ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class ShoppingCartViewerRewriteClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewriteClient.java:26: error: cannot find symbol
+  [javadoc]     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                        ^
+  [javadoc]   symbol:   class HttpServletRequest
+  [javadoc]   location: class ShoppingCartViewerRewriteClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewriteClient.java:26: error: cannot find symbol
+  [javadoc]     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                                                ^
+  [javadoc]   symbol:   class HttpServletResponse
+  [javadoc]   location: class ShoppingCartViewerRewriteClient
+  [javadoc] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\stateexamples\src\ShoppingCartViewerRewriteClient.java:26: error: cannot find symbol
+  [javadoc]     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  [javadoc]                                                                                ^
+  [javadoc]   symbol:   class ServletException
+  [javadoc]   location: class ShoppingCartViewerRewriteClient
+  [javadoc] 100 errors
+
+BUILD SUCCESSFUL
+Total time: 3 seconds

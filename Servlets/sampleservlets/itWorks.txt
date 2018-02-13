@@ -1,0 +1,6 @@
+So I couldn't build 2 files and placed them in "java-debugThis".
+They both need certain jars that I do not have access to.
+Basically, I can compile the others, not those two. 
+Also! one of libraries names must have been changed from tomcat7 to tomcat8. 
+added "-api.jar".
+*clean target needs update

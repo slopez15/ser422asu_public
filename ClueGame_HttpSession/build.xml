@@ -69,6 +69,8 @@
   <!-- Clean -->
   <!-- NOTE: This needs some work, we really need to undeploy the app in TC -->
   <target name="clean">
+    <delete dir="${tomcat.home}/webapps/${app.name}"/>
+    <delete file="${tomcat.home}/webapps/${dist.jar}"/>
     <delete dir="${build.home}"/>
 	  <delete dir="${classes.dir}"/>
     <delete file="${dist.jar}"/>
@@ -76,6 +78,7 @@
 
   <!-- Clean all -->
   <target name="cleanall" depends="clean">
+    <delete dir="${javadoc.dir}"/>
     <delete file="${submit.jar}"/>
   </target>
 

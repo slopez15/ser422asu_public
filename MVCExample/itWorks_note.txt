@@ -1,0 +1,7 @@
+Noticed that this one has 2 properties different....
+  test.dir = test
+  properties.dir = conf
+I added
+  cleanall
+  submit
+because submit is added, it isn't customized for this MVCExample to package test or anything else.

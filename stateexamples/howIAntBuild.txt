@@ -1,0 +1,3 @@
+build.properties I changed only tomcat.home
+build.xml I only broke javadoc into 2 and placed fileset in between. 
+For both I place a reminder to myself of organization of respective files

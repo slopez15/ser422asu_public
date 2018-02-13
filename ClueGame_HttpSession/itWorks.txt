@@ -1,0 +1,6 @@
+ClueGame may not clean
+  tomcat/webapps/
+    ClueGame/ & war file.
+build.xml
+  not have javadocs
+  edited clean/cleanall now removes folder and war file

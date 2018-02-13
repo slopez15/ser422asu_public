@@ -3,7 +3,7 @@
    Copyright 2018 Kevin A. Gary
 
    This build.xml does most of the things asked of you in the
-   submission guidelines document. However, you may need to 
+   submission guidelines document. However, you may need to
    customize actions for these targets per each lab's
    particular submission requirements, so please take the time
    to understand how this works!
@@ -62,7 +62,7 @@
     <antcall target="deploy-port1"/>
     <antcall target="deploy-port2"/>
   </target>
-  
+
   <target name="build" depends="compile">
     <mkdir dir="${build.home}"/>
     <mkdir dir="${build.home}/WEB-INF"/>
@@ -75,7 +75,7 @@
     <copy file="index.html" tofile="${build.home}/index.html"/>
     <copy file="web.xml" tofile="${build.home}/WEB-INF/web.xml"/>
   </target>
-    
+
   <!-- This example dist target merely jars up the webapp files. -->
   <target name="dist" depends="build">
     <jar destfile="${dist.jar}" basedir="${build.home}">
@@ -91,25 +91,31 @@
 
   <!-- Run javadoc on your java source code -->
   <target name="javadoc" depends="init">
+    <!-- NOTE: kept getting error so I broke javadoc into 2 tags so I can place fileset in between.
+        NOTE: javadocs does not build right.
+          NOTE REASON: cannot find symbols for the javax.servlet.http.* stuff like HttpServlet class.
+    -->
     <javadoc packagenames="*"
-             sourcepath="src/java"
+             sourcepath="src"
              destdir="javadoc"
              author="true"
              version="true"
              windowtitle="Example Servlets"
              doctitle="InClass"
-             bottom="Copyright 2018 Kevin Gary" />
+             bottom="Copyright 2018 Kevin Gary">
+             <fileset dir="src"/>
+    </javadoc>
   </target>
 
   <!-- Clean -->
   <target name="clean">
-    <delete file="${dist.jar}"/>
-    <delete dir="${tomcat.home}-${tomcat-port1}/webapps/${app.name}"/>
-    <delete dir="${tomcat.home}-${tomcat-port2}/webapps/${app.name}"/>
-    <delete file="${tomcat.home}-${tomcat-port1}/webapps/${dist.jar}"/>
+    <delete dir="${tomcat.home}-${tomcat.port1}/webapps/${app.name}"/>
+    <delete dir="${tomcat.home}-${tomcat.port2}/webapps/${app.name}"/>
+    <delete file="${tomcat.home}-${tomcat.port1}/webapps/${dist.jar}"/>
     <delete file="${tomcat.home}-${tomcat.port2}/webapps/${dist.jar}"/>
     <delete dir="${build.home}"/>
     <delete dir="${classes.dir}"/>
+    <delete file="${dist.jar}"/>
   </target>
 
   <!-- Clean all -->
@@ -119,3 +125,20 @@
   </target>
 
 </project>
+<!--
+init
+compile
+build
+dist
+
+__deploy
+deploy
+deploy-port1
+deploy-port2
+
+javadoc
+submit
+clean
+cleanall
+#init, compile, build, dist, deploy, submit, clean (name)
+ -->

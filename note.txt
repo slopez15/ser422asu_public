@@ -1,0 +1,45 @@
+Most edits are in build.xml and build.properties.
+build.properties --
+	change tomcat.home to correct path.
+		single tomcat
+			include the port for full folder path.
+		tomcat8 -> tomcat8
+			probably has 2 tomcats in mind
+		tomcat7 -> tomcat8-8080
+			since tomcat 7 was old and
+			pribably has 1 tomcat in mind
+		tomcat8-8080 -> tomcat-8080
+			probably has 1 tomcat in mind
+		*When building my 2 tomcats refer to ___ for 2 tomcat build.xml structure.
+		may need certain properties for clean,cleanall in 
+build.xml--submit.jar & javadoc
+		*may need to edit asurite.id
+build.xml --
+	may need to mkdir a lib folder.
+	javadoc may need a file set to src.
+	*may need to include a library. like javax
+	*MongoExamples -- needs certain files.
+	*some cleaning targets need to be updated.
+	*may need to update clean & cleanall, submit, and javadoc. 
+		you may need to edit build.properties
+	javadoc 
+		base on ClueGame
+   		  I will go without adding those targets if they don't have one.
+		  cleanall will try deleting if exists though.
+		If ever adding, check these...
+		use booktown as example
+		  mkdir in init
+		  depend in submit. Alse, update includes attribute.
+All the applications that probably need a clean target update. 
+	ClueGame
+	ClueGame.war
+	DateServlet
+	DateServlet.war
+	ExampleServlets
+	ExampleServlets.war
+	PhoneServlet
+	PhoneServlet.war
+	StateExamples
+	StateExamples.war
+	servletexamples
+	servletexamples.war

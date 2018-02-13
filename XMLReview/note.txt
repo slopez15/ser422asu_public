@@ -1,0 +1,5 @@
+not sure here, but can compile each java file since they all have a main--except 
+JDOMExample.java
+JDOMExample.java needs some external libraries before able to compile. 
+not sure what xmlfiles folder is yet. 
+

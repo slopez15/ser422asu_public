@@ -3,11 +3,17 @@
     <property environment="env"/>
 
     <property name="src"            value="java" />
-    <property name="build"          value="build" />
+    <property name="build"          value="build" /><!-- build.home is same -->
     <property name="classes"        value="build/WEB-INF/classes" />
+    <property name="app.name"       value="servletexamples" />
+    <property name="dist.jar"       value="${app.name}.war" />
     <property name="war"            value="servletexamples.war" />
-    <property name="tomcat.home"    value="/Users/kevinagary/work/asu/classes/ser422/tomcat-8.5.24-8080"/>
-	
+    <property name="tomcat.home"    value="/Users/Sandra/Documents/hw/tomcat-8.5.24-8080"/>
+    <!-- ...don't know how to var ref in string -->
+    <property name="asurite.id"     value="myASURITEHere"/>
+    <property name="submit.jar"     value="${asurite.id}.${app.name}.jar"/>
+    <property name="javadoc.dir"    value="javadoc"/>
+
     <target name="prepare">
         <tstamp/>
         <mkdir dir="${build}" />
@@ -20,9 +26,12 @@
         <javac debug="true" srcdir="${src}" destdir="${classes}" >
             <classpath>
                 <pathelement path="${tomcat.home}/lib/servlet-api.jar" />
-                <pathelement path="${tomcat.home}/lib/jsp.jar" />
+                <!--I added -->
+                <!-- <pathelement path="${tomcat.home}/lib/javax.jar" /> -->
+                <pathelement path="${tomcat.home}/lib/jsp-api.jar" />
                 <pathelement path="lib/jcServlet.jar" />
                 <pathelement path="lib/Acme.jar" />
+                <!-- <pathelement path="lib/javax.jar" /> -->
             </classpath>
         </javac>
     </target>
@@ -45,9 +54,26 @@
         <copy file="${war}" todir="${tomcat.home}/webapps" overwrite="yes" />
     </target>
 
+    <!-- submit creates a single jarfile that you will upload to the
+         Gradebook channel on the class portal. -->
+    <target name="submit" depends="dist">
+      <jar destfile="${submit.jar}" basedir="." includes="README.txt,build.properties,build.xml,web.xml,${src.dir}/**,${lib.dir}/**,${classes.dir}/**">
+       </jar>
+    </target>
+
     <target name="clean">
-        <delete dir="${build}" />
-        <delete file="${war}" />
+      <delete dir="${tomcat.home}/webapps/${app.name}"/>
+      <delete file="${tomcat.home}/webapps/${war}"/>
+  	  <delete dir="${classes.dir}"/>
+      <delete dir="${build}" /><!-- build.home -->
+      <delete file="${war}" /><!-- dist.jar -->
+    </target>
+
+    <!-- Clean all -->
+    <!-- added -->
+    <target name="cleanall" depends="clean">
+      <delete dir="${javadoc.dir}"/>
+      <delete file="${submit.jar}"/>
     </target>
 
 </project>

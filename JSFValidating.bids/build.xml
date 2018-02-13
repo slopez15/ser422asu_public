@@ -2,7 +2,7 @@
    Copyright 2014 Kevin A. Gary
 
    This build.xml does most of the things asked of you in the
-   submission guidelines document. However, you may need to 
+   submission guidelines document. However, you may need to
    customize actions for these targets per each lab's
    particular submission requirements, so please take the time
    to understand how this works!
@@ -16,7 +16,8 @@
   <target name="init">
     <tstamp/>
     <mkdir dir="${build.home}"/>
-  	<mkdir dir="${classes.dir}"/>
+    <mkdir dir="${classes.dir}"/>
+    <mkdir dir="lib"/>
   </target>
 
   <!-- Compiles your java files and puts the classes in classes.dir -->
@@ -44,7 +45,7 @@
   <target name="deploy" depends="dist">
     <copy file="${dist.jar}" todir="${tomcat.home}/webapps" overwrite="yes"/>
   </target>
-      
+
   <target name="build" depends="compile">
     <mkdir dir="${build.home}"/>
     <mkdir dir="${build.home}/WEB-INF"/>
@@ -64,25 +65,35 @@
     <copy file="web.xml" tofile="${build.home}/WEB-INF/web.xml"/>
     <copy file="faces-config.xml" tofile="${build.home}/WEB-INF/faces-config.xml"/>
   </target>
-    
+
   <!-- This example dist target merely jars up the webapp files. -->
   <target name="dist" depends="build">
     <jar destfile="${dist.jar}" basedir="${build.home}">
     </jar>
   </target>
 
+  <!-- submit creates a single jarfile that you will upload to the
+       Gradebook channel on the class portal. -->
+  <!-- This target was added -->
+  <target name="submit" depends="dist">
+    <jar destfile="${submit.jar}" basedir="." includes="README.txt,build.properties,build.xml,web.xml,${src.dir}/**,${lib.dir}/**,${classes.dir}/**">
+     </jar>
+  </target>
+
   <!-- Clean -->
   <!-- NOTE: This needs some work, we really need to undeploy the app in TC -->
   <target name="clean">
-    <delete file="${dist.jar}"/>
+    <delete dir="${tomcat.home}/webapps/${app.name}"/>
+    <delete file="${tomcat.home}/webapps/${dist.jar}"/>
     <delete dir="${build.home}"/>
+    <delete dir="${classes.dir}"/>
+    <delete file="${dist.jar}"/>
   </target>
 
   <!-- Clean all -->
   <target name="cleanall" depends="clean">
 	<delete dir="${classes.dir}"/>
+  <delete file="${submit.jar}"/>
   </target>
 
 </project>
-  
-

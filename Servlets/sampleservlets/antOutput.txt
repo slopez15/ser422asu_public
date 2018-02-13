@@ -1,0 +1,331 @@
+Buildfile: C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\build.xml
+
+prepare:
+
+compile:
+     [echo] Path to CATALINA_HOME is /Users/kevinagary/work/asu/classes/ser422/tomcat-8.5.24-8080
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\build.xml:20: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 9 source files to C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\build\WEB-INF\classes
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:3: error: cannot find symbol
+    [javac] public class AppListener implements ServletContextListener, ServletContextAttributeListener {
+    [javac]                                     ^
+    [javac]   symbol: class ServletContextListener
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:3: error: cannot find symbol
+    [javac] public class AppListener implements ServletContextListener, ServletContextAttributeListener {
+    [javac]                                                             ^
+    [javac]   symbol: class ServletContextAttributeListener
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:5: error: cannot find symbol
+    [javac] 	public void contextInitialized(ServletContextEvent event) {
+    [javac] 	                               ^
+    [javac]   symbol:   class ServletContextEvent
+    [javac]   location: class AppListener
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:11: error: cannot find symbol
+    [javac] 	public void contextDestroyed(ServletContextEvent event) {
+    [javac] 	                             ^
+    [javac]   symbol:   class ServletContextEvent
+    [javac]   location: class AppListener
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:18: error: cannot find symbol
+    [javac] 	public void attributeAdded(ServletContextAttributeEvent arg0) {
+    [javac] 	                           ^
+    [javac]   symbol:   class ServletContextAttributeEvent
+    [javac]   location: class AppListener
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:24: error: cannot find symbol
+    [javac] 	public void attributeRemoved(ServletContextAttributeEvent arg0) {
+    [javac] 	                             ^
+    [javac]   symbol:   class ServletContextAttributeEvent
+    [javac]   location: class AppListener
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:30: error: cannot find symbol
+    [javac] 	public void attributeReplaced(ServletContextAttributeEvent arg0) {
+    [javac] 	                              ^
+    [javac]   symbol:   class ServletContextAttributeEvent
+    [javac]   location: class AppListener
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:1: error: package javax.servlet does not exist
+    [javac] import javax.servlet.*;
+    [javac] ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AuthServlet.java:9: error: cannot find symbol
+    [javac] public class AuthServlet extends HttpServlet {
+    [javac]                                  ^
+    [javac]   symbol: class HttpServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AuthServlet.java:13: error: cannot find symbol
+    [javac]     public void init(ServletConfig config) throws ServletException {
+    [javac]                      ^
+    [javac]   symbol:   class ServletConfig
+    [javac]   location: class AuthServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AuthServlet.java:13: error: cannot find symbol
+    [javac]     public void init(ServletConfig config) throws ServletException {
+    [javac]                                                   ^
+    [javac]   symbol:   class ServletException
+    [javac]   location: class AuthServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AuthServlet.java:20: error: cannot find symbol
+    [javac]     public void doGet(HttpServletRequest req, HttpServletResponse res)
+    [javac]                       ^
+    [javac]   symbol:   class HttpServletRequest
+    [javac]   location: class AuthServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AuthServlet.java:20: error: cannot find symbol
+    [javac]     public void doGet(HttpServletRequest req, HttpServletResponse res)
+    [javac]                                               ^
+    [javac]   symbol:   class HttpServletResponse
+    [javac]   location: class AuthServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AuthServlet.java:21: error: cannot find symbol
+    [javac]                                throws ServletException, IOException {
+    [javac]                                       ^
+    [javac]   symbol:   class ServletException
+    [javac]   location: class AuthServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AuthServlet.java:3: error: package javax.servlet does not exist
+    [javac] import javax.servlet.*;
+    [javac] ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AuthServlet.java:4: error: package javax.servlet.http does not exist
+    [javac] import javax.servlet.http.*;
+    [javac] ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:7: error: package Acme.JPM.Encoders does not exist
+    [javac] import Acme.JPM.Encoders.GifEncoder;
+    [javac]                         ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:8: error: package javachart.chart does not exist
+    [javac] import javachart.chart.BarChart;
+    [javac]                       ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:11: error: cannot find symbol
+    [javac] public class ChartServlet extends HttpServlet {
+    [javac]                                   ^
+    [javac]   symbol: class HttpServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:13: error: cannot find symbol
+    [javac]     public void doGet (HttpServletRequest req, HttpServletResponse res)
+    [javac]                        ^
+    [javac]   symbol:   class HttpServletRequest
+    [javac]   location: class ChartServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:13: error: cannot find symbol
+    [javac]     public void doGet (HttpServletRequest req, HttpServletResponse res)
+    [javac]                                                ^
+    [javac]   symbol:   class HttpServletResponse
+    [javac]   location: class ChartServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:14: error: cannot find symbol
+    [javac]                         throws ServletException, IOException {
+    [javac]                                ^
+    [javac]   symbol:   class ServletException
+    [javac]   location: class ChartServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:1: error: package javax.servlet does not exist
+    [javac] import javax.servlet.*;
+    [javac] ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:2: error: package javax.servlet.http does not exist
+    [javac] import javax.servlet.http.*;
+    [javac] ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ImageServlet.java:8: error: package Acme.JPM.Encoders does not exist
+    [javac] import Acme.JPM.Encoders.GifEncoder;
+    [javac]                         ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ImageServlet.java:11: error: cannot find symbol
+    [javac] public class ImageServlet extends HttpServlet {
+    [javac]                                   ^
+    [javac]   symbol: class HttpServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ImageServlet.java:13: error: cannot find symbol
+    [javac]     public void doGet (HttpServletRequest req, HttpServletResponse res)
+    [javac]                        ^
+    [javac]   symbol:   class HttpServletRequest
+    [javac]   location: class ImageServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ImageServlet.java:13: error: cannot find symbol
+    [javac]     public void doGet (HttpServletRequest req, HttpServletResponse res)
+    [javac]                                                ^
+    [javac]   symbol:   class HttpServletResponse
+    [javac]   location: class ImageServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ImageServlet.java:14: error: cannot find symbol
+    [javac]                         throws ServletException, IOException {
+    [javac]                                ^
+    [javac]   symbol:   class ServletException
+    [javac]   location: class ImageServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ImageServlet.java:3: error: package javax.servlet does not exist
+    [javac] import javax.servlet.*;
+    [javac] ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ImageServlet.java:4: error: package javax.servlet.http does not exist
+    [javac] import javax.servlet.http.*;
+    [javac] ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\International.java:8: error: cannot find symbol
+    [javac] public class International extends HttpServlet {
+    [javac]                                    ^
+    [javac]   symbol: class HttpServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\International.java:10: error: cannot find symbol
+    [javac]   public void doGet(HttpServletRequest req, HttpServletResponse res)
+    [javac]                     ^
+    [javac]   symbol:   class HttpServletRequest
+    [javac]   location: class International
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\International.java:10: error: cannot find symbol
+    [javac]   public void doGet(HttpServletRequest req, HttpServletResponse res)
+    [javac]                                             ^
+    [javac]   symbol:   class HttpServletResponse
+    [javac]   location: class International
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\International.java:11: error: cannot find symbol
+    [javac]                                throws ServletException, IOException {
+    [javac]                                       ^
+    [javac]   symbol:   class ServletException
+    [javac]   location: class International
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\International.java:4: error: package javax.servlet does not exist
+    [javac] import javax.servlet.*;
+    [javac] ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\International.java:5: error: package javax.servlet.http does not exist
+    [javac] import javax.servlet.http.*;
+    [javac] ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\SnoopServlet.java:38: error: cannot find symbol
+    [javac] public class SnoopServlet extends HttpServlet {
+    [javac]                                   ^
+    [javac]   symbol: class HttpServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\SnoopServlet.java:41: error: cannot find symbol
+    [javac] 	public void doGet (HttpServletRequest req, HttpServletResponse res)
+    [javac] 	                   ^
+    [javac]   symbol:   class HttpServletRequest
+    [javac]   location: class SnoopServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\SnoopServlet.java:41: error: cannot find symbol
+    [javac] 	public void doGet (HttpServletRequest req, HttpServletResponse res)
+    [javac] 	                                           ^
+    [javac]   symbol:   class HttpServletResponse
+    [javac]   location: class SnoopServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\SnoopServlet.java:42: error: cannot find symbol
+    [javac]     throws ServletException, IOException
+    [javac]            ^
+    [javac]   symbol:   class ServletException
+    [javac]   location: class SnoopServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\SnoopServlet.java:25: error: package javax.servlet does not exist
+    [javac] import javax.servlet.*;
+    [javac] ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\SnoopServlet.java:26: error: package javax.servlet.http does not exist
+    [javac] import javax.servlet.http.*;
+    [javac] ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:6: error: cannot find symbol
+    [javac] 		ServletContext context = event.getServletContext();
+    [javac] 		^
+    [javac]   symbol:   class ServletContext
+    [javac]   location: class AppListener
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:12: error: cannot find symbol
+    [javac] 		ServletContext context = event.getServletContext();
+    [javac] 		^
+    [javac]   symbol:   class ServletContext
+    [javac]   location: class AppListener
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:17: error: method does not override or implement a method from a supertype
+    [javac] 	@Override
+    [javac] 	^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:19: error: cannot find symbol
+    [javac] 		ServletContext context = arg0.getServletContext();
+    [javac] 		^
+    [javac]   symbol:   class ServletContext
+    [javac]   location: class AppListener
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:23: error: method does not override or implement a method from a supertype
+    [javac] 	@Override
+    [javac] 	^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:25: error: cannot find symbol
+    [javac] 		ServletContext context = arg0.getServletContext();
+    [javac] 		^
+    [javac]   symbol:   class ServletContext
+    [javac]   location: class AppListener
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:29: error: method does not override or implement a method from a supertype
+    [javac] 	@Override
+    [javac] 	^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AppListener.java:31: error: cannot find symbol
+    [javac] 		ServletContext context = arg0.getServletContext();
+    [javac] 		^
+    [javac]   symbol:   class ServletContext
+    [javac]   location: class AppListener
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AuthServlet.java:14: error: cannot find symbol
+    [javac]         super.init(config);
+    [javac]         ^
+    [javac]   symbol:   variable super
+    [javac]   location: class AuthServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\AuthServlet.java:30: error: cannot find symbol
+    [javac]             res.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+    [javac]                           ^
+    [javac]   symbol:   variable HttpServletResponse
+    [javac]   location: class AuthServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:31: error: cannot find symbol
+    [javac]             BarChart chart = new BarChart();
+    [javac]             ^
+    [javac]   symbol:   class BarChart
+    [javac]   location: class ChartServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:31: error: cannot find symbol
+    [javac]             BarChart chart = new BarChart();
+    [javac]                                  ^
+    [javac]   symbol:   class BarChart
+    [javac]   location: class ChartServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:44: error: cannot find symbol
+    [javac]             GifEncoder encoder = new GifEncoder(image, res.getOutputStream());
+    [javac]             ^
+    [javac]   symbol:   class GifEncoder
+    [javac]   location: class ChartServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:44: error: cannot find symbol
+    [javac]             GifEncoder encoder = new GifEncoder(image, res.getOutputStream());
+    [javac]                                      ^
+    [javac]   symbol:   class GifEncoder
+    [javac]   location: class ChartServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ImageServlet.java:16: error: cannot find symbol
+    [javac]         ServletOutputStream out = res.getOutputStream();
+    [javac]         ^
+    [javac]   symbol:   class ServletOutputStream
+    [javac]   location: class ImageServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ImageServlet.java:55: error: cannot find symbol
+    [javac]             GifEncoder encoder = new GifEncoder(image, out);
+    [javac]             ^
+    [javac]   symbol:   class GifEncoder
+    [javac]   location: class ImageServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ImageServlet.java:55: error: cannot find symbol
+    [javac]             GifEncoder encoder = new GifEncoder(image, out);
+    [javac]                                      ^
+    [javac]   symbol:   class GifEncoder
+    [javac]   location: class ImageServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\SnoopServlet.java:55: error: cannot find symbol
+    [javac] 	out.println (HttpUtils.getRequestURL (req).toString ());
+    [javac] 	             ^
+    [javac]   symbol:   variable HttpUtils
+    [javac]   location: class SnoopServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\SnoopServlet.java:58: error: cannot find symbol
+    [javac] 	Enumeration<String> enumer = getServletConfig().getInitParameterNames();
+    [javac] 	                             ^
+    [javac]   symbol:   method getServletConfig()
+    [javac]   location: class SnoopServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\SnoopServlet.java:68: error: cannot find symbol
+    [javac]                 out.println(" "+param+": "+getInitParameter(param));
+    [javac]                                            ^
+    [javac]   symbol:   method getInitParameter(String)
+    [javac]   location: class SnoopServlet
+    [javac] 63 errors
+Buildfile: C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\build.xml
+
+prepare:
+
+compile:
+     [echo] Path to CATALINA_HOME is /Users/Sandra/Documents/hw/tomcat-8.5.24-8080
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\build.xml:20: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 9 source files to C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\build\WEB-INF\classes
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:7: error: package Acme.JPM.Encoders does not exist
+    [javac] import Acme.JPM.Encoders.GifEncoder;
+    [javac]                         ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:8: error: package javachart.chart does not exist
+    [javac] import javachart.chart.BarChart;
+    [javac]                       ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ImageServlet.java:8: error: package Acme.JPM.Encoders does not exist
+    [javac] import Acme.JPM.Encoders.GifEncoder;
+    [javac]                         ^
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:31: error: cannot find symbol
+    [javac]             BarChart chart = new BarChart();
+    [javac]             ^
+    [javac]   symbol:   class BarChart
+    [javac]   location: class ChartServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:31: error: cannot find symbol
+    [javac]             BarChart chart = new BarChart();
+    [javac]                                  ^
+    [javac]   symbol:   class BarChart
+    [javac]   location: class ChartServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:44: error: cannot find symbol
+    [javac]             GifEncoder encoder = new GifEncoder(image, res.getOutputStream());
+    [javac]             ^
+    [javac]   symbol:   class GifEncoder
+    [javac]   location: class ChartServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ChartServlet.java:44: error: cannot find symbol
+    [javac]             GifEncoder encoder = new GifEncoder(image, res.getOutputStream());
+    [javac]                                      ^
+    [javac]   symbol:   class GifEncoder
+    [javac]   location: class ChartServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ImageServlet.java:55: error: cannot find symbol
+    [javac]             GifEncoder encoder = new GifEncoder(image, out);
+    [javac]             ^
+    [javac]   symbol:   class GifEncoder
+    [javac]   location: class ImageServlet
+    [javac] C:\Users\Sandra\Documents\hw\zgiven-Repo-cleanEnv\zser422asu_public\Servlets\sampleservlets\java\ImageServlet.java:55: error: cannot find symbol
+    [javac]             GifEncoder encoder = new GifEncoder(image, out);
+    [javac]                                      ^
+    [javac]   symbol:   class GifEncoder
+    [javac]   location: class ImageServlet
+    [javac] 9 errors

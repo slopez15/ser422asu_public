@@ -31,7 +31,7 @@
   <target name="deploy" depends="dist">
     <copy file="${dist.jar}" todir="${tomcat.home}/webapps" overwrite="yes"/>
   </target>
-      
+
   <target name="build" depends="compile">
     <mkdir dir="${build.home}"/>
     <mkdir dir="${build.home}/WEB-INF"/>
@@ -43,23 +43,36 @@
     </copy>
     <!-- <copy file="web.xml" tofile="${build.home}/WEB-INF/web.xml"/> -->
   </target>
-    
+
   <!-- This example dist target merely jars up the webapp files. -->
   <target name="dist" depends="build">
     <jar destfile="${dist.jar}" basedir="${build.home}">
     </jar>
   </target>
 
+  <!-- submit creates a single jarfile that you will upload to the
+       Gradebook channel on the class portal. -->
+  <!-- added -->
+  <target name="submit" depends="dist">
+    <jar destfile="${submit.jar}" basedir="." includes="README.txt,build.properties,build.xml,web.xml,${src.dir}/**,${lib.dir}/**,${classes.dir}/**">
+     </jar>
+  </target>
+
   <!-- Clean -->
   <!-- NOTE: This needs some work, we really need to undeploy the app in TC -->
   <target name="clean">
-    <delete file="${dist.jar}"/>
     <delete dir="${tomcat.home}/webapps/${app.name}"/>
     <delete file="${tomcat.home}/webapps/${dist.jar}"/>
     <delete dir="${build.home}"/>
 	<delete dir="${classes.dir}"/>
+  <delete file="${dist.jar}"/>
+  </target>
+
+  <!-- Clean all -->
+  <!-- added -->
+  <target name="cleanall" depends="clean">
+    <delete dir="${javadoc.dir}"/>
+    <delete file="${submit.jar}"/>
   </target>
 
 </project>
-  
-

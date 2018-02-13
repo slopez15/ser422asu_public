@@ -11,6 +11,7 @@
     <tstamp/>
     <mkdir dir="${classes.dir}"/>
     <mkdir dir="${javadoc.dir}"/>
+    <mkdir dir="lib"/>
   </target>
 
   <!-- Compiles your java files and puts the classes in classes.dir -->
@@ -37,7 +38,7 @@
   <target name="deploy" depends="dist">
     <copy file="${dist.jar}" todir="${tomcat.home}/webapps" overwrite="yes"/>
   </target>
-      
+
   <target name="build" depends="compile">
     <mkdir dir="${build.home}"/>
     <mkdir dir="${build.home}/WEB-INF"/>
@@ -49,7 +50,7 @@
     </copy>
     <copy file="web.xml" tofile="${build.home}/WEB-INF/web.xml"/>
   </target>
-    
+
   <!-- This example dist target merely jars up the webapp files. -->
   <target name="dist" depends="build">
     <jar destfile="${dist.jar}" basedir="${build.home}">
@@ -86,16 +87,18 @@
              version="true"
              windowtitle="Lab 2 APIs"
              doctitle="InClass"
-             bottom="Copyright 2005 Kevin Gary" />
+             bottom="Copyright 2005 Kevin Gary">
+             <fileset dir="src"/>
+    </javadoc>
   </target>
 
   <!-- Clean -->
   <target name="clean">
-    <delete file="${dist.jar}"/>
     <delete dir="${tomcat.home}/webapps/${app.name}"/>
     <delete file="${tomcat.home}/webapps/${dist.jar}"/>
     <delete dir="${build.home}"/>
-	<delete dir="${classes.dir}"/>
+	  <delete dir="${classes.dir}"/>
+    <delete file="${dist.jar}"/>
   </target>
 
   <!-- Clean all -->
@@ -105,5 +108,3 @@
   </target>
 
 </project>
-  
-
