@@ -1,0 +1,9 @@
+sample war when unpacked is same(for the most part) as folder in 
+webapps.--the unpacked had war-tracker in META-INF.
+suggestion: try unpacking sample.war and rebuild it with ant
+
+PS. see examples for more examples.
+Docs for more other stuff
+everything else --ignore tbh
+Docs(the good stuff)
+  1st web-app(see contents after install, intro for pdf "book")

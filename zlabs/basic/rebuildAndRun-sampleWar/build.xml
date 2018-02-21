@@ -8,8 +8,9 @@
    particular submission requirements, so please take the time
    to understand how this works!
 -->
+<!-- modified by: Saul Lopez -->
 
-<project name="DateServlet" default="compile" basedir=".">
+<project name="sampleRebuild" default="compile" basedir=".">
   <property file="build.properties"/>
 
   <!-- init target makes the directory structure. You may not
@@ -17,6 +18,7 @@
   <target name="init">
     <tstamp/>
     <mkdir dir="lib"/>
+    <mkdir dir="src"/>
     <mkdir dir="${classes.dir}"/>
     <mkdir dir="${javadoc.dir}"/>
     <mkdir dir="${properties.dir}"/>
@@ -72,7 +74,7 @@
     <copy todir="${build.home}/WEB-INF/${classes.dir}">
       <fileset dir="${properties.dir}"/>
     </copy>
-    <copy file="web.xml" tofile="${build.home}/WEB-INF/web.xml"/>
+    <copy file="./WEB-INF/web.xml" tofile="${build.home}/WEB-INF/web.xml"/>
   </target>
 
   <!-- This example dist target merely jars up the webapp files. -->
@@ -109,8 +111,11 @@
     <delete dir="${tomcat.home}-${tomcat.port2}/webapps/${app.name}"/>
     <delete file="${tomcat.home}-${tomcat.port1}/webapps/${dist.jar}"/>
     <delete file="${tomcat.home}-${tomcat.port2}/webapps/${dist.jar}"/>
+    <!--<delete dir="src"/>-->
+    <!--<delete dir="lib"/>-->
     <delete dir="${build.home}"/>
     <delete dir="${classes.dir}"/>
+    <delete dir="${properties.dir}"/>
   </target>
 
   <!-- Clean all -->

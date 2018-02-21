@@ -1,0 +1,8 @@
+kgary not want src (*.java) in war. 
+static files should all be in src
+src wo/compiled files (classes/bin)
+
+This means I cannot rebuild sample.war w/kgary limitations.
+Will give war file as his build scripts work and src tree
+THEN, README to tell where should place src tree 
+	to be like the war un-packing.(like sample.war)

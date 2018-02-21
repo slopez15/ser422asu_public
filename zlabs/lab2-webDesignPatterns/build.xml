@@ -8,6 +8,7 @@
    particular submission requirements, so please take the time
    to understand how this works!
 -->
+<!-- modified by: Saul Lopez -->
 
 <project name="DateServlet" default="compile" basedir=".">
   <property file="build.properties"/>
@@ -111,6 +112,8 @@
     <delete file="${tomcat.home}-${tomcat.port2}/webapps/${dist.jar}"/>
     <delete dir="${build.home}"/>
     <delete dir="${classes.dir}"/>
+    <delete dir="lib"/>
+    <delete dir="properties"/>
   </target>
 
   <!-- Clean all -->

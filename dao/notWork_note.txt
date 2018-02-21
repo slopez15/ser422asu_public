@@ -1,0 +1,6 @@
+404.
+focus on jar/war file.
+see servlet slides
+
+gradle assemble && gradle classes && gradle jar
+ 

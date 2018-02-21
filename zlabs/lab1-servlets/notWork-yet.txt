@@ -1,0 +1,7 @@
+Building: can use ant build to zip for submission of both task1&2, etc.
+need2zip both war(w/o *.java) files(task1&2), and 2 src 
+trees(notNwar)(no classes/bin/war)(yes *.java,staticFiles).
+ant (compile,build,dist,clean.deploy)(use existing to make it easy)
+could refer to 
+	stateExample & servlets\examples(maybe a build problem)
+	servlets\examples can look for original example in "Servlets and JSPs"
