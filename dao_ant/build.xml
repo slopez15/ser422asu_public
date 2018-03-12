@@ -50,7 +50,8 @@
     <copy todir="${build.home}/WEB-INF">
       <fileset dir="." includes="${classes.dir}/**,${lib.dir}/**" excludes="${classes.dir}/driver/**"/>
     </copy>
-    <!-- <copy file="web.xml" tofile="${build.home}/WEB-INF/web.xml"/> -->
+    <!-- Below was commented out. I uncommented it! -->
+    <copy file="web.xml" tofile="${build.home}/WEB-INF/web.xml"/>
   	<!-- <copy file="${resources.dir}/index.html" tofile="${build.home}/index.html"/> -->
   </target>
 

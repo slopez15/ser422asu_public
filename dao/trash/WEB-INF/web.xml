@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  <display-name>DAO-Data Access Object</display-name>
+  <description>Sample for SER422</description>
+
+  <servlet>
+    <servlet-name>DAO-DataAccessObject</servlet-name>
+    <!--<servlet-class>edu.asupoly.ser422.dao.DAOMockBizLayer</servlet-class>-->
+    <load-on-startup>1</load-on-startup>
+    <!-- <init-param>
+      <param-name>example</param-name>
+      <param-value>valueOrPath</param-value>
+    </init-param> -->
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>DAO-DataAccessObject</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+</web-app>

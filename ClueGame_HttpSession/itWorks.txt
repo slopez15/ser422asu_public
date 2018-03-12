@@ -4,3 +4,10 @@ ClueGame may not clean
 build.xml
   not have javadocs
   edited clean/cleanall now removes folder and war file
+===================
+Notes of this application that might help fix dao.
+build.xml used resources\index.html that lead into "main" java file mentioned in web.xml
+however, if you look into the "main" file (Gues Servlet) it doesn't have main().
+	<welcome-file-list>
+	  	<welcome-file>/index.html</welcome-file>
+	</welcome-file-list>

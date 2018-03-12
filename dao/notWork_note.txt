@@ -1,6 +1,18 @@
+I could not find a root path or http method in any java files.
+I don't know if dao files are runnable.
+web.xml
+	refer to notes
+	compiled files under web-inf(web-inf/classes/files), 
+	web.xml (/web-inf) in dataServlet example called class files but never had /classes dir name.
+ClueGame_HttpSession showed the use of static files leading into the java files.(also, http methods WERE used, unlike dao.)
+
+================
 404.
+If war unpacked and not appear, may be on other tomcat.
+
 focus on jar/war file.
-see servlet slides
+	4xx means client ~=war complete, but maybe main method resource not found, 
+	5xx means server ~=java crash, war incomplete, etc.
+see servlet slides for other info if needed.
 
 gradle assemble && gradle classes && gradle jar
- 
