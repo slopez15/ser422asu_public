@@ -19,7 +19,7 @@
   	<copy file="${properties}/rdbm.properties" todir="${destdir}/WEB-INF/classes/"/>
   </target>
 
-  <target name="build" depends="compile,apidoc">
+  <target name="build" depends="compile, apidoc">
     <copy file="web.xml" todir="${destdir}/WEB-INF"/>
   	<copy todir="${destdir}/${apidocdir}">
   		<fileset dir="${apidocdir}"/>
@@ -29,9 +29,10 @@
 
   <target name="apidoc">
 	<mkdir dir="${apidocdir}"/>
-  	<exec dir="." executable="apidoc">
+  <!-- not sure what this is supposed to do. The file just has a JSON. With some info and https://localhost:8080/RestExampleAPI/rest/ -->
+  	<!-- <exec dir="." executable="apidoc">
   		<arg line="-i ./${srcdir} -o ./${apidocdir}"/>
-  	</exec>
+  	</exec> -->
   </target>
 
   <target name="deploy" depends="build">
@@ -44,7 +45,7 @@
     </jar>
   </target>
 
-  <target name="clean">
+  <target name="clean" depends="undeploy">
     <delete file="${warfile}" />
   	<delete file="${submit.jar}" />
     <delete dir="${destdir}"/>
