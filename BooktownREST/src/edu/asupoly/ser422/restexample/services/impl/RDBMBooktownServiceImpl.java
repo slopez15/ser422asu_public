@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -14,15 +15,16 @@ import edu.asupoly.ser422.restexample.model.Subject;
 import edu.asupoly.ser422.restexample.services.BooktownService;
 
 import java.util.Properties;
+import java.util.Random;
 
 //A simple impl of interface BooktownService
-public class RDBMBooktownServiceImpl implements BooktownService {
+public class RDBMBooktownServiceImpl extends ABooktownServiceImpl {
 	private static Properties __dbProperties;
 	private static String __jdbcUrl;
 	private static String __jdbcUser;
 	private static String __jdbcPasswd;
 	private static String __jdbcDriver;
-
+	
 	private Connection getConnection() throws Exception {
 		try {
 			Class.forName(__jdbcDriver);
@@ -81,16 +83,15 @@ public class RDBMBooktownServiceImpl implements BooktownService {
 		PreparedStatement stmt = null;
 		try {
 			conn = getConnection();
-			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.createAuthor"),
-			 										Statement.RETURN_GENERATED_KEYS);
-			stmt.setString(1, lname);
-			stmt.setString(2, fname);
+			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.createAuthor"));
+			int generatedKey = generateKey(1, 99999);
+			stmt.setInt(1, generatedKey); 
+			stmt.setString(2, lname);
+			stmt.setString(3, fname);
 			// return stmt.executeUpdate();
 			int updatedRows = stmt.executeUpdate();
 			if(updatedRows > 0){
-				ResultSet generatedKeys = stmt.getGeneratedKeys();
-				generatedKeys.next();
-				return generatedKeys.getInt(1);
+				return generatedKey;
 			}else{
 				return -1;
 			}
@@ -111,19 +112,31 @@ public class RDBMBooktownServiceImpl implements BooktownService {
 
 	public boolean deleteAuthor(int authorId) {
 		Connection conn = null;
-		PreparedStatement stmt = null;
+		PreparedStatement stmt  = null;
+		PreparedStatement stmt2 = null;
 		try {
 			conn = getConnection();
+			conn.setAutoCommit(false);
 			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.deleteAuthor"));
 			stmt.setInt(1, authorId);
 			stmt.executeUpdate();
+			stmt2 = conn.prepareStatement(__dbProperties.getProperty("sql.removeAuthorRefFromBook"));
+			stmt2.setInt(1, authorId);
+			stmt2.executeUpdate();
+			conn.commit();
 			return true;
 		} catch (Exception sqe) {
 			sqe.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 			return false;
 		} finally {  // why nest all of these try/finally blocks?
 			try {
 					if (stmt != null) { stmt.close(); }
+					if (stmt2 != null) { stmt2.close(); }
 			} catch (Exception e2) { e2.printStackTrace(); }
 			finally {
 				try {
