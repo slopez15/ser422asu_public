@@ -14,15 +14,17 @@ public interface BooktownService {
     public boolean deleteAuthor(int authorId);
     public int createAuthor(String lname, String fname);
     public boolean updateAuthor(Author author);
-    
+
     // Book methods
     public List<Book> getBooks();
     public Book getBook(int id);
+    //public boolean deleteAuthor(int authorId);
     public int createBook(String title, int aid, int sid);
     public Author findAuthorOfBook(int bookId);
-    
+
     // Subject methods
     public List<Subject> getSubjects();
     public Subject getSubject(int id);
+    //public boolean updateAuthor(Author author);
     public List<Book> findBooksBySubject(int subjectId);
 }
