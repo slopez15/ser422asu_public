@@ -19,23 +19,22 @@ import javax.ws.rs.core.UriInfo;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import edu.asupoly.ser422.restexample.model.Subject;
 import edu.asupoly.ser422.restexample.model.Book;
+import edu.asupoly.ser422.restexample.model.Author;
 import edu.asupoly.ser422.restexample.services.BooktownService;
 import edu.asupoly.ser422.restexample.services.BooktownServiceFactory;
 
 /*
-// Subject methods
-public List<Subject> getSubjects();
-public Subject getSubject(int id);
-//public boolean updateAuthor(Author author); //location
-public List<Book> findBooksBySubject(int subjectId);
-
+public List<Book> getBooks();
+public Book getBook(int id);
+//public boolean deleteAuthor(int authorId); //
+public int createBook(String title, int aid, int sid);
+public Author findAuthorOfBook(int bookId);
 */
 
-@Path("/subjects")
+@Path("/books")
 @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-public class SubjectResource {
+public class BookResource {
 	private static BooktownService __bService = BooktownServiceFactory.getInstance();
 
 	// Technique for location header taken from
@@ -76,9 +75,10 @@ public class SubjectResource {
      *
      * */
 	@GET
-	public List<Subject> getSubjects() {
-		return __bService.getSubjects();
+	public List<Book> getBooks() {
+		return __bService.getBooks();
 	}
+
 	/* This is the first version of GET we did, using defaults and letting Jersey internally serialize
 	 @GET
 	@Path("/{authorId}")
@@ -91,14 +91,14 @@ public class SubjectResource {
 	 * the same JSON as Jersey's internal version, so the output will look the same as version 1 when you run
 	 */
 	@GET
-	@Path("/{subjectId}")
-	public Response getSubject(@PathParam("subjectId") int sid) {
+	@Path("/{bookId}")
+	public Response getBook(@PathParam("bookId") int bid) {
 		// This isn't correct - what if the authorId is not for an active author?
-		Subject subject = __bService.getSubject(sid);
+		Book book = __bService.getBook(bid);
 		// let's use Jackson instead. ObjectMapper will build a JSON string and we use
 		// the ResponseBuilder to use that. Note the result looks the same
 		try {
-			String aString = new ObjectMapper().writeValueAsString(subject); //2nd version
+			String aString = new ObjectMapper().writeValueAsString(book); //2nd version
 			return Response.status(Response.Status.OK).entity(aString).build();
 		} catch (Exception exc) {
 			exc.printStackTrace();
@@ -106,28 +106,75 @@ public class SubjectResource {
 		}
 	}
 
-		/*more methods*/
-		// This is the first version of GET we did, using defaults and letting Jersey internally serialize
-		 @GET
-		@Path("/{subjectId}/books") //"/{bookId}/author"
-		public List<Book> findBooksBySubject (@PathParam("subjectId") int sid) {
-			return __bService.findBooksBySubject(sid); //1st version --jersey serialize List<Books> object.
+	// This is a 3rd version using a custom serializer I've encapsulated over in the new helper class
+	/*
+	 * @GET
+
+	@Path("/{authorId}")
+	public Response getAuthor(@PathParam("authorId") int aid) {
+		Author author = __bService.getAuthor(aid);
+
+		// AuthorSerializationHelper will build a slightly different JSON string and we still use
+		// the ResponseBuilder to use that. The key property names are changed in the result.
+		try {
+			String aString = AuthorSerializationHelper.getHelper().generateJSON(author); //3rd version
+			return Response.status(Response.Status.OK).entity(aString).build();
+		} catch (Exception exc) {
+			exc.printStackTrace();
+			return null;
 		}
-		//*/
+	}
+	*/
+	/* This was the first version of POST we did
+	@POST
+	@Consumes("text/plain")
+    public int createAuthor(String name) {
+		String[] names = name.split(" ");
+		// not handled - what if this returns -1?
+		int aid = __bService.createAuthor(names[0], names[1]);
+		return aid;
+    }
+    */
+	/*
+	 * This was the second version that added simple custom response headers and payload
+	 */
+	@POST
+	@Consumes("text/plain")
+    public Response createBook(String title, int aid, int sid) { //author had String names
+//		String[] names = name.split(" ");
+		int bid = -1;
+//		int bid = __bService.createBook(names[0], names[1]);
+		if (bid == -1) {
+			return Response.status(500).entity("{ \" EXCEPTION INSERTING INTO DATABASE! \"}").build();
+		} else if (bid == 0) {
+			return Response.status(500).entity("{ \" ERROR INSERTING INTO DATABASE! \"}").build();
+		}
+		return Response.status(201)
+				.header("Location", String.format("%s/%s",_uriInfo.getAbsolutePath().toString(), bid))
+				.entity("{ \"Book\" : \"" + bid + "\"}").build();
+    }
+
+		/*more methods*/
+		//This is the first version of GET we did, using defaults and letting Jersey internally serialize
+		@GET
+		@Path("/{bookId}/author")
+		public Author findAuthorOfBook (@PathParam("bookId") int bid) {
+			return __bService.findAuthorOfBook(bid); //1st version --jersey serialize Author object.
+		}
 		/*
 		 * This is a second version - it uses Jackson's default mapping via ObjectMapper, which spits out
 		 * the same JSON as Jersey's internal version, so the output will look the same as version 1 when you run
 		 */
 		 /*
 		@GET
-		@Path("/{subjectId}")
-		public Response getSubject(@PathParam("subjectId") int sid) {
+		@Path("/{bookId}")
+		public Response getBook(@PathParam("bookId") int bid) {
 			// This isn't correct - what if the authorId is not for an active author?
-			Subject subject = __bService.getSubject(sid);
+			Book book = __bService.getBook(bid);
 			// let's use Jackson instead. ObjectMapper will build a JSON string and we use
 			// the ResponseBuilder to use that. Note the result looks the same
 			try {
-				String aString = new ObjectMapper().writeValueAsString(subject); //2nd version
+				String aString = new ObjectMapper().writeValueAsString(book); //2nd version
 				return Response.status(Response.Status.OK).entity(aString).build();
 			} catch (Exception exc) {
 				exc.printStackTrace();
@@ -135,5 +182,4 @@ public class SubjectResource {
 			}
 		}
 		*/
-
 }

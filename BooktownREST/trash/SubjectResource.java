@@ -79,6 +79,7 @@ public class SubjectResource {
 	public List<Subject> getSubjects() {
 		return __bService.getSubjects();
 	}
+
 	/* This is the first version of GET we did, using defaults and letting Jersey internally serialize
 	 @GET
 	@Path("/{authorId}")
@@ -106,34 +107,33 @@ public class SubjectResource {
 		}
 	}
 
-		/*more methods*/
-		// This is the first version of GET we did, using defaults and letting Jersey internally serialize
-		 @GET
-		@Path("/{subjectId}/books") //"/{bookId}/author"
-		public List<Book> findBooksBySubject (@PathParam("subjectId") int sid) {
-			return __bService.findBooksBySubject(sid); //1st version --jersey serialize List<Books> object.
+	/*more methods*/
+	// This is the first version of GET we did, using defaults and letting Jersey internally serialize
+	 @GET
+	@Path("/{subjectId}/books") //"/{bookId}/author"
+	public List<Book> findBooksBySubject (@PathParam("subjectId") int sid) {
+		return __bService.findBooksBySubject(sid); //1st version --jersey serialize List<Books> object.
+	}
+	//*/
+	/*
+	 * This is a second version - it uses Jackson's default mapping via ObjectMapper, which spits out
+	 * the same JSON as Jersey's internal version, so the output will look the same as version 1 when you run
+	 */
+	 /*
+	@GET
+	@Path("/{subjectId}")
+	public Response getSubject(@PathParam("subjectId") int sid) {
+		// This isn't correct - what if the authorId is not for an active author?
+		Subject subject = __bService.getSubject(sid);
+		// let's use Jackson instead. ObjectMapper will build a JSON string and we use
+		// the ResponseBuilder to use that. Note the result looks the same
+		try {
+			String aString = new ObjectMapper().writeValueAsString(subject); //2nd version
+			return Response.status(Response.Status.OK).entity(aString).build();
+		} catch (Exception exc) {
+			exc.printStackTrace();
+			return null;
 		}
-		//*/
-		/*
-		 * This is a second version - it uses Jackson's default mapping via ObjectMapper, which spits out
-		 * the same JSON as Jersey's internal version, so the output will look the same as version 1 when you run
-		 */
-		 /*
-		@GET
-		@Path("/{subjectId}")
-		public Response getSubject(@PathParam("subjectId") int sid) {
-			// This isn't correct - what if the authorId is not for an active author?
-			Subject subject = __bService.getSubject(sid);
-			// let's use Jackson instead. ObjectMapper will build a JSON string and we use
-			// the ResponseBuilder to use that. Note the result looks the same
-			try {
-				String aString = new ObjectMapper().writeValueAsString(subject); //2nd version
-				return Response.status(Response.Status.OK).entity(aString).build();
-			} catch (Exception exc) {
-				exc.printStackTrace();
-				return null;
-			}
-		}
-		*/
-
+	}
+	*/
 }
