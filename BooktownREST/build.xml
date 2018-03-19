@@ -39,6 +39,9 @@
     <copy file="${warfile}" todir="${tomcat_webapps}" />
   </target>
 
+  <target name="redeploy" depends="clean, deploy">
+  </target>
+
   <!-- This example dist target merely jars up the webapp files. -->
   <target name="submit" depends="clean">
     <jar destfile="${submit.jar}" basedir="." excludes="bin/**,${srclib}/**,classes/**,build/**">
@@ -49,7 +52,7 @@
     <delete file="${warfile}" />
   	<delete file="${submit.jar}" />
     <delete dir="${destdir}"/>
-  	<delete dir="${apidocdir}"/>
+  	<!--<delete dir="${apidocdir}"/>-->
   </target>
 
   <target name="undeploy">

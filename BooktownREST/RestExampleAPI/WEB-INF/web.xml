@@ -5,15 +5,15 @@
          version="3.1">
 
     <servlet>
-        <servlet-name>jersey-servlet</servlet-name>
-        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-        <init-param>
+        <servlet-name>jersey-servlet</servlet-name><!-- logical name -->
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class><!-- from jar: -->
+        <init-param> <!-- an initial value to direct jersey -->
             <param-name>jersey.config.server.provider.packages</param-name>
             <param-value>edu.asupoly.ser422.restexample.api</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    
+
     <servlet-mapping>
         <servlet-name>jersey-servlet</servlet-name>
         <url-pattern>/rest/*</url-pattern>
