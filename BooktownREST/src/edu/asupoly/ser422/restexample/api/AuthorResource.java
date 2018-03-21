@@ -140,7 +140,7 @@ public class AuthorResource {
 			return Response.status(500).entity("{ \" ERROR INSERTING INTO DATABASE! \"}").build();
 		}
 		return Response.status(201)
-				.header("Location", String.format("%s/%s",_uriInfo.getAbsolutePath().toString(), aid))
+				.header("Location", String.format("%s/%s",_uriInfo.getAbsolutePath().toString(), aid)) //no slash handling, assume person not end with slash
 				.entity("{ \"Author\" : \"" + aid + "\"}").build();
     }
 
@@ -183,7 +183,7 @@ public class AuthorResource {
     }
 
 	@DELETE
-    public Response deleteAuthor(@QueryParam("id") int aid) {
+    public Response deleteAuthor(@QueryParam("id") int aid) { //change this to @PathParam for REST consistancy
 		if (__bService.deleteAuthor(aid)) {
 			return Response.status(204).build();
 		} else {

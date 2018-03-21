@@ -254,7 +254,6 @@ public class RDBMBooktownServiceImpl extends ABooktownServiceImpl {
 	@Override
 	public List<Book> getBooks() {
 		// TODO Auto-generated method stub
-/*
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -263,9 +262,11 @@ public class RDBMBooktownServiceImpl extends ABooktownServiceImpl {
 			conn = getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(__dbProperties.getProperty("sql.getBooks"));
+
 			while (rs.next()) { //TODO: may need edit
-				rval.add(new Book(rs.getInt(1), rs.getString(2), rs.getString(3)));
+				rval.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4) ) );
 			}
+
 		}
 		catch (Exception se) {
 			se.printStackTrace();
@@ -286,18 +287,12 @@ public class RDBMBooktownServiceImpl extends ABooktownServiceImpl {
 				}
 			}
 		}
-
 		return rval;
-/**/
-		List<Book> val = new ArrayList<Book>();
-		val.add(new Book());
-		return val;
 	}
 
 	@Override
 	public Book getBook(int id) {
 		// TODO Auto-generated method stub
-/*
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -308,7 +303,7 @@ public class RDBMBooktownServiceImpl extends ABooktownServiceImpl {
 			stmt.setInt(1, id);
 			rs = stmt.executeQuery();
 			if (rs.next()) {
-				rval = new Book(rs.getInt(1), rs.getString(2), rs.getString(3));
+				rval = new Book( rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4) );
 			}
 		} catch (Exception sqe) {
 			sqe.printStackTrace();
@@ -324,17 +319,14 @@ public class RDBMBooktownServiceImpl extends ABooktownServiceImpl {
 			}
 		}
 		return rval;
-/**/
-		Book val = new Book();
-		return val;
 	}
 
 	@Override
 	public int createBook(String title, int aid, int sid) {
 		// TODO Auto-generated method stub
 		//TODO: update from author to book data manip.
-/*
-		if (aid == null || sid == null || aid.length() == 0 || sid.length() == 0) { //
+/**/
+		if (title == null || sid < 0 || sid < 0 || title.length() == 0 ) { //
 			return -1;
 		}
 		Connection conn = null;
@@ -344,8 +336,9 @@ public class RDBMBooktownServiceImpl extends ABooktownServiceImpl {
 			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.createBook"));
 			int generatedKey = generateKey(1, 99999);
 			stmt.setInt(1, generatedKey);
-			stmt.setString(2, aid); //
-			stmt.setString(3, sid); //
+			stmt.setString(2, title);
+			stmt.setInt(3, aid);
+			stmt.setInt(4, sid);
 			// return stmt.executeUpdate();
 			int updatedRows = stmt.executeUpdate();
 			if(updatedRows > 0){
@@ -366,17 +359,83 @@ public class RDBMBooktownServiceImpl extends ABooktownServiceImpl {
 				} catch (Exception e3) { e3.printStackTrace(); }
 			}
 		}
-/**/
-	return -1;
 	}
 
+/*TODO: add and implement*/
+	public boolean deleteBook(int bookId) {
+		Connection conn = null;
+		PreparedStatement stmt  = null;
+		PreparedStatement stmt2 = null;
+		try {
+			conn = getConnection();
+			conn.setAutoCommit(false);
+			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.deleteBook"));
+			stmt.setInt(1, bookId);
+			stmt.executeUpdate();
+//			stmt2 = conn.prepareStatement(__dbProperties.getProperty("sql.removeBookRefFromBook"));
+//			stmt2.setInt(1, bookId);
+//			stmt2.executeUpdate();
+			conn.commit();
+			return true;
+		} catch (Exception sqe) {
+			sqe.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return false;
+		} finally {  // why nest all of these try/finally blocks?
+			try {
+					if (stmt != null) { stmt.close(); }
+					if (stmt2 != null) { stmt2.close(); }
+			} catch (Exception e2) { e2.printStackTrace(); }
+			finally {
+				try {
+					if (conn != null) { conn.close(); }
+				} catch (Exception e3) { e3.printStackTrace(); }
+			}
+		}
+	}
+/**/
 	@Override
 	public Author findAuthorOfBook(int bookId) {
 		// TODO Auto-generated method stub
-		//TODO: impl this and findBookBySubject
-		//return null;
-		Author val = new Author(0,"l","f");
-		return val;
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		Author author = null;
+		int aid = -1;
+		try {
+			conn = getConnection();
+
+			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.getBook"));
+			stmt.setInt(1, bookId);
+			rs = stmt.executeQuery();
+			if (rs.next()) {
+				aid = rs.getInt(3); //get author id
+			}
+
+			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.getAuthor"));
+			stmt.setInt(1, aid);
+			rs = stmt.executeQuery();
+			if (rs.next()) {
+				author = new Author(rs.getInt(1), rs.getString(2), rs.getString(3));
+			}
+		} catch (Exception sqe) {
+			sqe.printStackTrace();
+		} finally {  // why nest all of these try/finally blocks?
+			try {
+				rs.close();
+				if (stmt != null) { stmt.close(); }
+			} catch (Exception e2) { e2.printStackTrace(); }
+			finally {
+				try {
+					if (conn != null) { conn.close(); }
+				} catch (Exception e3) { e3.printStackTrace(); }
+			}
+		}
+		return author;
 	}
 
 	@Override

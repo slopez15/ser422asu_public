@@ -125,9 +125,35 @@ public class BookResource {
 			}
 			*/
 
-			/*TODO:  add Response createBook(String title, int aid, int sid)
-				See: trash/scrap folder
-			*/
+			/*TODO:  fix createBook */
+			/* This was the first version of POST we did
+			@POST
+			@Consumes("text/plain")
+		    public int createAuthor(String name) {
+				String[] names = name.split(" ");
+				// not handled - what if this returns -1?
+				int aid = __bService.createAuthor(names[0], names[1]);
+				return aid;
+		    }
+		    */
+			/*
+			 * This was the second version that added simple custom response headers and payload
+			 */
+			@POST
+			@Consumes("text/plain")
+	    public Response createBook(String name) { //title, aid, sid //no handling, assume entered as: title aid sid //title has to be one phrase, support later.
+				String[] params = name.split(" ");
+				int bid = __bService.createBook(params[0], Integer.parseInt(params[1]), Integer.parseInt(params[2]) );
+				if (bid == -1) {
+					return Response.status(500).entity("{ \" EXCEPTION INSERTING INTO DATABASE! \"}").build();
+				} else if (bid == 0) {
+					return Response.status(500).entity("{ \" ERROR INSERTING INTO DATABASE! \"}").build();
+				}
+				return Response.status(201)
+						.header("Location", String.format("%s/%s",_uriInfo.getAbsolutePath().toString(), bid)) //no slash handling, assume person not end with slash
+						.entity("{ \"Book\" : \"" + bid + "\"}").build();
+	    }
+
 
 				/*more methods*/
 				//This is the first version of GET we did, using defaults and letting Jersey internally serialize
@@ -157,4 +183,18 @@ public class BookResource {
 					}
 				}
 				*/
+
+
+				/* This is the first version of DELETE I did, using defaults and letting Jersey internally serialize */
+				/*
+				@DELETE
+				public Response deleteBook(@QueryParam("id") int bid) { //change to PathParam for REST consistancy
+					if (__bService.deleteAuthor(bid)) {
+						return Response.status(204).build();
+					} else {
+						return Response.status(404, "{ \"message \" : \"No such Author " + aid + "\"}").build();
+					}
+				}
+				/**/
+
 }
