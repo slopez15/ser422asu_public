@@ -136,4 +136,113 @@ public class SubjectResource {
 		}
 		*/
 
+		/*TODO: //for C. (updates Location (and anything else) of a Subject) */
+		/*
+		 * This is the original PUT method that consumed the default JSON Jersey produces. Would work with the
+		 * JSON produced by getAuthor versions 1 and 2 above, but not version 33
+		@PUT
+		@Consumes("application/json")
+	    public Response updateAuthor(Author a) {
+			if (__bService.updateAuthor(a)) {
+				return Response.status(201).entity("{ \"Author\" : \"" + a.getAuthorId() + "\"}").build();
+			} else {
+				return Response.status(404, "{ \"message \" : \"No such Author " + a.getAuthorId() + "\"}").build();
+			}
+	    }
+	    */
+		/*
+		 * This 2nd version of PUT uses the deserializer from AuthorSerializationHelper, and process the JSON given
+		 * in GET version 3 above. Note that when you use the custom serializer/deserializer, it will not be
+		 * compatible with methods that do not use it (which will continue to use the Jersey default). If you
+		 * decide to customize, then you should be certain to use your (de)serializer throughout your resource!
+		 */
+		 /*
+		@PUT
+		@Consumes("application/json")
+    public Response updateSubject(String json) { //for C. (updates Location (and anything else) of a Subject)
+			try {
+				Author a = AuthorSerializationHelper.getHelper().consumeJSON(json);
+				if (__bService.updateAuthor(a)) {
+					// In the response payload it would still use Jackson's default serializer,
+					// so we directly invoke our serializer so the PUT payload reflects what it should.
+					String aString = AuthorSerializationHelper.getHelper().generateJSON(a);
+					return Response.status(201).entity(aString).build();
+				} else {
+					return Response.status(404, "{ \"message \" : \"No such Author " + a.getAuthorId() + "\"}").build();
+				}
+			} catch (Exception exc) {
+				exc.printStackTrace();
+				return Response.status(500, "{ \"message \" : \"Internal server error deserializing Author JSON\"}").build();
+			}
+    }
+		/**/
+
+		/*TODO*/
+		/*NOTE:
+		D. (15) Add a convenience endpoint that, given a Subject location substring, finds all Authors who author a book in that Subject.
+		given Subject location
+		get Subject(s) that have location
+		get Book(s) that have Subject(s)
+		get Author of the Book(s)
+		return Authors
+		endpoint: /authors?location=<something>
+			reason for endpoint design,
+				would prefer path param, but
+				we are not provided {subjectId} and can no longer follow typical (/resource1s/{r1id}/resource2s) pattern
+				where, we receive a list of resource2 data from r1id (a particular resource1).
+				If {subjectId} was provided, the prefered endpoint would be (/subjects/{sid}/locations).
+					This way, we will update location for a particular subject.
+		*/
+		/*
+		 * This is the original PUT method that consumed the default JSON Jersey produces. Would work with the
+		 * JSON produced by getAuthor versions 1 and 2 above, but not version 33
+		@PUT
+		@Consumes("application/json")
+	    public Response updateAuthor(Author a) {
+			if (__bService.updateAuthor(a)) {
+				return Response.status(201).entity("{ \"Author\" : \"" + a.getAuthorId() + "\"}").build();
+			} else {
+				return Response.status(404, "{ \"message \" : \"No such Author " + a.getAuthorId() + "\"}").build();
+			}
+	    }
+	    */
+		/*
+		 * This 2nd version of PUT uses the deserializer from AuthorSerializationHelper, and process the JSON given
+		 * in GET version 3 above. Note that when you use the custom serializer/deserializer, it will not be
+		 * compatible with methods that do not use it (which will continue to use the Jersey default). If you
+		 * decide to customize, then you should be certain to use your (de)serializer throughout your resource!
+		 */
+		 /*
+		@PUT
+		@Consumes("application/json")
+    public Response updateSubject(String json) { //use @QueryParam
+			try {
+				Author a = AuthorSerializationHelper.getHelper().consumeJSON(json);
+				if (__bService.updateAuthor(a)) {
+					// In the response payload it would still use Jackson's default serializer,
+					// so we directly invoke our serializer so the PUT payload reflects what it should.
+					String aString = AuthorSerializationHelper.getHelper().generateJSON(a);
+					return Response.status(201).entity(aString).build();
+				} else {
+					return Response.status(404, "{ \"message \" : \"No such Author " + a.getAuthorId() + "\"}").build();
+				}
+			} catch (Exception exc) {
+				exc.printStackTrace();
+				return Response.status(500, "{ \"message \" : \"Internal server error deserializing Author JSON\"}").build();
+			}
+    }
+		/**/
+		//Use this as @QueryParam usage example.
+		/*
+		@DELETE
+	    public Response deleteAuthor(@QueryParam("id") int aid) { //change this to @PathParam for REST consistancy
+			if (__bService.deleteAuthor(aid)) {
+				return Response.status(204).build();
+			} else {
+				return Response.status(404, "{ \"message \" : \"No such Author " + aid + "\"}").build();
+			}
+	    }
+			/**/
+
+
 }
