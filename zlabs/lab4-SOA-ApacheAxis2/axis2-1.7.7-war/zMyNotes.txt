@@ -1,0 +1,318 @@
+My Notes:
+
+General
+three main sections: 
+'Services' 		-- lists services 
+					deployed in this server, 
+'Validate' 		-- see if required libs in place and views system info; checks system; 
+'Administration'-- console/module for administering Apache Axis2 installation.
+				   dynamically configure Axis2 
+					NOT persistent.
+					if restart, servlet container ==>
+						dynamic config changes lost.
+				   ***conf/axis2.xml***
+					user: admin
+					pass: axis2
+.
+.
+.
+SOAP Monitor
+web.xml
+http://axis.apache.org/axis2/java/core/docs/soapmonitor-module.html
+	<!--
+		above site refers to editing conf/axis2.xml
+		The SOAP Monitor module (soapmonitor.mar) is available in the axis2.war but it is not engaged by default. 
+		The SOAP Monitor is NOT enabled by default for security reasons.
+		The SOAP Monitor can be engaged by inserting the following in the axis2.xml file.
+	-->
+	<!-- http://localhost:8080/axis2/SOAPMonitor -->
+.
+.
+.
+Admin Guide
+http://axis.apache.org/axis2/java/core/docs/webadminguide.html
+***conf/axis2.xml***
+user: admin
+pass: axis2
+NOT persistent. dynamic config.
+------
+more at link mentioned above for admin guide
+...
+**Upload Services
+	can upload (packaged Apache Axis2 service) 
+	**(archive files) using this page. 
+.
+**Available Services
+	Sames as Services. 
+	BUT, 
+	lists details of modules and 
+	their operations on a global service or operation level.
+	Faulty services listed 
+	.
+	'Disengage' link
+		disengage module 
+			**iff !globally engaged (i.e., engaged to all the services and operations).
+				module vs services and operations??
+	.
+	**Click on a specific service
+		gives WSDL file of that service.
+	.
+	Click faulty service 
+		view exception stack trace of the exception, which caused service to be faulty.
+...
+Globally Engaged Modules
+	the modules' handlers will be executed irrespective of the service.
+Available Phases
+	two levels of phases:
+		System predefined phases (not allowed to be changed)
+			will be invoked irrespective of the services
+		User defined phases
+			will be invoked when the dispatcher finds the operation. 
+	module developers and service writers must understand
+		**phases and phase ordering.
+...
+De/Activate Service
+	If deactivate, know it will re-activate at restart.
+	same for activate, but be inactive.
+...
+Edit Service Parameters
+	way to change parameters in a service or its operations--is transient.
+	process
+		links to page
+		select services which you want to edit parameters. 
+		click 'Edit Parameters'.. 
+View Hierarchy
+	look at system state at run time. 
+	lists out all
+		service group contexts, 
+		service contexts, 
+		operation contexts, 
+		etc.
+.
+.
+.
+**Configuration Guide
+http://axis.apache.org/axis2/java/core/docs/axis2config.html
+------
+**3 kinds of configuration files 
+1) Global Configuration (axis2.xml)
+	conf/
+	(AXIS2_HOME/conf/axis2.xml)
+2) Service Configuration (services.xml)
+	services/<in service>
+	(AXIS2_HOME/repository/services/services.xml) 
+	(<service>\build\classes\META-INF\services.xml)--when built?
+	META-INF of <service>(arr) that's in services/
+3) Module Configuration (module.xml)	
+	modules/<in module>
+	(AXIS2_HOME/repository/modules)	
+Note:
+	AXIS2_HOME?
+	repository?
+	they seem to be same = axis2 servlet-container folder itself
+0) Tomcat (web.xml)
+<servlet-name>
+	AxisServlet
+<servlet-class>
+	org.apache.axis2.transport.http.AxisServlet
+servlet-mapping
+	<url-pattern>
+	/servlet/AxisServlet
+	*.jws
+	/services/*
+**try above paths
+
+1) Global Configuration (axis2.xml)
+
+------
+2) Service Configuration (services.xml)
+**http://axis.apache.org/axis2/java/core/docs/axis2config.html#Service_Configuration
+**(aar) files
+required:
+	name
+	parameters
+	operations
+------
+3) Module Configuration (module.xml)
+**(mar) files
+
+------
+http://axis.apache.org/axis2/java/core/docs/app_server.html
+If want to deploy custom WARs, say in a clustering environment, need:
+	WEB-INF/services/services.list : should list all services (aar files) that you want to expose.
+	WEB-INF/modules/modules.list : should list all modules (mar files) that you want to use.
+.
+.
+.
+**User's Guide
+http://axis.apache.org/axis2/java/core/docs/userguide.html
+------
+**how to use Axis2 to 
+	create and deploy Web services 
+	how to use WSDL 
+		to generate both clients and services.
+Axis2 and its structure, 
+	explanation of various directories/files in latest Axis2 download.
+------
+Axis2?
+	Java-based implementation of both the client and server sides of the Web services equation
+	web services impl for client and server
+enables:
+	Send SOAP messages
+	Receive and process SOAP messages
+	Create a Web service out of a plain Java class
+	**Create implementation classes for both the server and client using WSDL
+	Easily retrieve the WSDL for a service
+	Send and receive SOAP messages with attachments
+	Create or utilize a REST-based Web service
+	Create or utilize services that take advantage of WS-Security and WS-Addressing
+**go over slides about WS-<something>
+Under the Hood
+	diagram: http://axis.apache.org/axis2/java/core/docs/images/fig01.jpg
+	WS - undergo additional processing before it leaves the sender. (handlers?)
+How Axis2 handles SOAP messages
+	diagram: http://axis.apache.org/axis2/java/core/docs/images/fig02.jpg
+Axis2 Distributions
+	for developing services and applications
+	jars
+	**(bin)scripts - to ease development
+		axis2.bat/.sh
+			Java command 
+				without manually add all Axis2 jar files to classpath, 
+			**command:
+				axis2 org.apache.axis2.axis2userguide.Client.
+		java2wsdl.bat (and .sh) and wsdl2java.bat (and .sh), 
+			easily generate Java code from a WSDL file and vice versa
+		axis2server.bat (and sh), 
+			a Web server enabling you to build Axis2's capability to 
+			*send and receive messages into your own application.
+		**http://axis.apache.org/axis2/java/core/docs/installationguide.html#standalone4
+	lib
+		all needed .jar files. 
+	Services and modules
+		*are added to the repository directory. 
+		has standard module implementing WS-Addressing, 
+		can add needed module such as Rampart to repository/modules
+	conf 
+		axis2.xml (global deployment descriptor)
+	samples
+		See the list of samples and their descriptions.
+		http://axis.apache.org/axis2/java/core/docs/userguide-samples.html
+		**TEST: try running 
+			clients w/ axis2.bat/sh
+			services arr file
+			wsdl
+			other (MyService.aar)
+
+	axis2.war
+		controls how app deals with received messages. 
+		defines 
+			message receivers and transport receivers
+			transport senders
+			order of phases
+			the handlers to be executed within each phase.
+		determine active modules
+		more explanation online
+installing
+	short story
+		1. war file into webapps tomcat container
+		2. service (arr) into Axis2's services/
+		3. client onto system wanted to run it, and java -cp correct
+		4. run client
+	long story
+		same stuff
+		2. can use admin app to install or move arr file
+		ex: to install MyService service (a Axis2 sample), 
+			copy file <AXIS2_HOME>/samples/userguide/build/MyService.aar file, 
+				built using ant command
+					ant generate.service
+			to <J2EE_HOME>/webapps/axis2/WEB-INF/services.
+		3./4. 
+		client comes in many forms, 
+			collection of files --to-- single *.jar file. 
+			*ensure all needed classes on classpath. 
+				client classes & Axis2 *.jar files
+
+		Normally (downloading and unpacking) Axis2 Standard Distribution
+		adding lib/ *.jar files to CLASSPATH, 
+		or optional running client w/ axis2.bat (or axis2.sh) script, 
+		command:
+			axis2 org.apache.axis2.axis2userguide.Client
+Building Services
+http://axis.apache.org/axis2/java/core/docs/userguide-buildingservices.html#createscratch		
+------
+Code Listing 8-10
+.
+.
+.
+Quick Start Guide
+http://axis.apache.org/axis2/java/core/docs/quickstartguide.html
+------
+????
+.
+.
+.
+Installation Guide
+http://axis.apache.org/axis2/java/core/docs/installationguide.html#servlet_container
+------
+	**nothing new
+		war>>webapps
+		arr deploy via 'uploading service'
+		nice axis2 scripts descriptions
+.
+.
+.
+Advanced User's Guide
+http://axis.apache.org/axis2/java/core/docs/adv-userguide.html
+------
+
+.
+.
+.
+;
+WHAT I NEED:
+config: http://axis.apache.org/axis2/java/core/docs/axis2config.html#Service_Configuration
+installing guide: http://axis.apache.org/axis2/java/core/docs/userguide-installingtesting.html#installingtesting
+	installing service and client, not building.
+axis2 scripts and their flags!: http://axis.apache.org/axis2/java/core/docs/installationguide.html#standalone4
+								http://axis.apache.org/axis2/java/core/docs/reference.html
+Samples:	
+	http://axis.apache.org/axis2/java/core/docs/userguide-samples.html
+	clients
+	services
+	wsdl files
+	others
+	externals
+These three give hint in building client/server (stubs/skeleton)
+	http://axis.apache.org/axis2/java/core/docs/adv-userguide.html
+	Generating a client/service using (AXOIM, ADB, XMLBeans, JiBX)
+		http://axis.apache.org/axis2/java/core/docs/quickstartguide.html#services
+	building service/client
+		http://axis.apache.org/axis2/java/core/docs/userguide-buildingservices.html#buildservices
+		http://axis.apache.org/axis2/java/core/docs/userguide-creatingclients.html#createclients
+
+------
+
+.
+.
+.
+;
+------
+
+.
+.
+.
+;
+------
+
+
+
+
+
+
+
+
+
+
+
+

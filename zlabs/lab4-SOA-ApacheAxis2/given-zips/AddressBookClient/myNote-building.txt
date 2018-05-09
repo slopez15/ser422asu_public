@@ -1,0 +1,8 @@
+NOTE:
+RIT SOP CalcServiceClient
+needs to go through the process of becoming a process.
+certain files and certain commands (zipping, axis2 bins, etc.)
+
+AddressBookClient
+I think only needs certain files. (I think only; service.xml)
+

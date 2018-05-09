@@ -1,0 +1,6 @@
+don't need to list into
+	axis2\WEB-INF\services\services.list
+services.xml
+	(arr):<service>\META-INF\services.xml
+	...
+	
